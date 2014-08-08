@@ -1,4 +1,4 @@
 ColorCaller
 ===========
 
-Customizable and discreet Email/SMS Alert application.
+Customizable and discrete Email/SMS Alert application.
