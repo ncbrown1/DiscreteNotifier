@@ -1,6 +1,5 @@
 package com.eci.bcolor;
 
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -17,8 +16,6 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -31,7 +28,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class BColor extends javax.swing.JFrame {
     
-    private Preferences pref;
+    private final Preferences pref;
     private boolean testmode = false;
     private boolean isUrgent = false;
     
@@ -111,10 +108,6 @@ public class BColor extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
         jLabel19 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
@@ -152,7 +145,7 @@ public class BColor extends javax.swing.JFrame {
         jDialog1.setTitle("Preferences");
         jDialog1.setAlwaysOnTop(true);
 
-        jLabel7.setFont(new java.awt.Font("Cantarell", 1, 15));
+        jLabel7.setFont(new java.awt.Font("Cantarell", 1, 15)); // NOI18N
         jLabel7.setText("Your Contact Information:");
 
         jTextField1.setText(pref.getSelf().getName());
@@ -240,7 +233,7 @@ public class BColor extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addContainerGap(156, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Identity", jPanel3);
@@ -305,7 +298,7 @@ public class BColor extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Messages", jPanel4);
@@ -423,7 +416,7 @@ public class BColor extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(jButton6)))
@@ -446,22 +439,18 @@ public class BColor extends javax.swing.JFrame {
                 .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton4)
-                .addGap(0, 87, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Contacts", jPanel5);
 
-        jLabel1.setFont(new java.awt.Font("Cantarell", 1, 15));
+        jLabel1.setFont(new java.awt.Font("Cantarell", 1, 15)); // NOI18N
         jLabel1.setText("Email Host Configuration:");
 
-        jLabel15.setFont(new java.awt.Font("Cantarell", 1, 15));
+        jLabel15.setFont(new java.awt.Font("Cantarell", 1, 15)); // NOI18N
         jLabel15.setText("SMS Host Configuration:");
 
         jLabel16.setText("Host:");
-
-        jLabel17.setText("Email Address:");
-
-        jLabel18.setText("Password:");
 
         jLabel19.setText("Host:");
 
@@ -507,16 +496,10 @@ public class BColor extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                                 .addComponent(jButton9))))
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel18))
+                        .addGap(84, 84, 84)
+                        .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)))
+                        .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -550,35 +533,27 @@ public class BColor extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
+                .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(jButton10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel20)
                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel21))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Connectivity", jPanel6);
@@ -634,7 +609,7 @@ public class BColor extends javax.swing.JFrame {
             jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog1Layout.createSequentialGroup()
-                .addGap(0, 351, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jDialog1Layout.setVerticalGroup(
@@ -643,7 +618,7 @@ public class BColor extends javax.swing.JFrame {
                 .addComponent(jTabbedPane1)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addContainerGap())
         );
 
         jFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -654,7 +629,7 @@ public class BColor extends javax.swing.JFrame {
         jLabel23.setText("Please read before using application:");
 
         jTextArea3.setColumns(20);
-        jTextArea3.setFont(new java.awt.Font("Cantarell", 0, 24));
+        jTextArea3.setFont(new java.awt.Font("Cantarell", 0, 24)); // NOI18N
         jTextArea3.setRows(5);
         String warning = "This program is distributed in the hope that it will "
         + "be useful, but without any warranty. It is provided \"as is\""
@@ -700,7 +675,7 @@ public class BColor extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel23)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox1)
@@ -716,7 +691,7 @@ public class BColor extends javax.swing.JFrame {
         jPanel2.setRequestFocusEnabled(false);
 
         jLabel2.setBackground(new java.awt.Color(189, 189, 189));
-        jLabel2.setFont(new java.awt.Font("Cantarell", 0, 18));
+        jLabel2.setFont(new java.awt.Font("Cantarell", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText(" ");
 
@@ -734,8 +709,8 @@ public class BColor extends javax.swing.JFrame {
                 .addGap(0, 0, 0))
         );
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 204));
-        jButton2.setFont(new java.awt.Font("Cantarell", 1, 24));
+        jButton2.setBackground(new java.awt.Color(0, 150, 51));
+        jButton2.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton2.setToolTipText(null);
         jButton2.setMinimumSize(new java.awt.Dimension(10, 10));
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -751,7 +726,7 @@ public class BColor extends javax.swing.JFrame {
         });
 
         jButton1.setBackground(new java.awt.Color(200, 200, 0));
-        jButton1.setFont(new java.awt.Font("Cantarell", 1, 24));
+        jButton1.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton1.setToolTipText(null);
         jButton1.setMinimumSize(new java.awt.Dimension(10, 10));
         jButton1.setRequestFocusEnabled(false);
@@ -767,8 +742,8 @@ public class BColor extends javax.swing.JFrame {
             }
         });
 
-        jButton12.setBackground(new java.awt.Color(0, 150, 51));
-        jButton12.setFont(new java.awt.Font("Cantarell", 1, 24));
+        jButton12.setBackground(new java.awt.Color(0, 0, 204));
+        jButton12.setFont(new java.awt.Font("Cantarell", 1, 24)); // NOI18N
         jButton12.setToolTipText(null);
         jButton12.setMinimumSize(new java.awt.Dimension(10, 10));
         jButton12.setRequestFocusEnabled(false);
@@ -789,12 +764,12 @@ public class BColor extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(119, 119, 119)
-                .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(128, 128, 128))
         );
         jPanel1Layout.setVerticalGroup(
@@ -917,7 +892,7 @@ public class BColor extends javax.swing.JFrame {
                     String name = c.getName();
                     String roomnum = c.getRoom_num();
                     String msg = pref.getMildMsg();
-                    Message.sendEmail(email, emails, "[MAK-ALERT-WARNING] " + name + " is requesting help in " + roomnum, msg, pref);
+                    Message.sendEmail(emails, "[CC-ALERT-WARNING] " + name + " is requesting help in " + roomnum, msg, pref);
                     try {
                         Thread.sleep(300);
                         jButton1.setBackground(new Color(200,200,0));
@@ -948,26 +923,26 @@ public class BColor extends javax.swing.JFrame {
                     String name = c.getName();
                     String roomnum = c.getRoom_num();
                     String msg = "".equals(pref.getUrgentMsg()) ? "Urgent Emergency, Help Requested" : pref.getUrgentMsg();
-                    Message.sendEmail(email, emails, "[MAK-ALERT-URGENT] " + name + " is requesting IMMEDIATE help in " + roomnum, msg, pref);
+                    Message.sendEmail(emails, "[CC-ALERT-URGENT] " + name + " is requesting IMMEDIATE help in " + roomnum, msg, pref);
                     if(!testmode) {
                         for(com.eci.bcolor.Contact con : pref.getContactList()) {
                             String sms = con.getSms();
                             if(sms.length() > 0)
-                                Message.sendSMS(sms, "MAK-ALERT-URGENT - " + name + " - " + roomnum + " - " + msg, pref);
+                                Message.sendSMS(sms, "CC-ALERT-URGENT - " + name + " - " + roomnum + " - " + msg, pref);
                         }
                     } else {
-                        Message.sendSMS(c.getSms(), "MAK-ALERT-URGENT - " + name + " - " + roomnum + " - " + msg, pref);
+                        Message.sendSMS(c.getSms(), "CC-ALERT-URGENT - " + name + " - " + roomnum + " - " + msg, pref);
                     }
                     try {
                         Thread.sleep(300);
-                        jButton2.setBackground(new Color(0,0,204));
+                        jButton2.setBackground(new Color(0,150,51));
                         Thread.sleep(300);
                         jButton2.setBackground(new Color(190,190,190));
                         Thread.sleep(300);
                     } catch (InterruptedException ex) {
                         Logger.getLogger(BColor.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    jButton2.setBackground(new Color(0,0,204));
+                    jButton2.setBackground(new Color(0,150,51));
                 }
             }).start();
         }
@@ -1017,8 +992,6 @@ public class BColor extends javax.swing.JFrame {
         int size2 = 90 - str2.length();
         jLabel9.setText("Urgent Emergency [" + size2 + "]:");
         jTextField3.setText(pref.getEmailHost());
-        jTextField7.setText(pref.getEmailUser());
-        jPasswordField1.setText(pref.getEmailPassword());
         jTextField9.setText(pref.getSmsHost());
         jTextField10.setText("" + pref.getSmsPort());
         jTextField11.setText(pref.getSmsUser());
@@ -1229,11 +1202,9 @@ public class BColor extends javax.swing.JFrame {
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
         pref.setEmailHost(jTextField3.getText());
-        pref.setEmailUser(jTextField7.getText());
-        pref.setEmailPassword(new String(jPasswordField1.getPassword()));
         pref.exportToDB();
         com.eci.bcolor.Contact s = pref.getSelf();
-        Message.sendEmail(pref.getEmailUser(), s.getEmail(), "[MAK-ALERT-TESTING] " + s.getName() + " is requesting help in " + s.getRoom_num(), pref.getMildMsg(), pref);
+        Message.sendEmail(s.getEmail(), "[CC-ALERT-TESTING] " + s.getName() + " is requesting help in " + s.getRoom_num(), pref.getMildMsg(), pref);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -1244,7 +1215,7 @@ public class BColor extends javax.swing.JFrame {
         pref.setSmsPassword(new String(jPasswordField2.getPassword()));
         pref.exportToDB();
         com.eci.bcolor.Contact s = pref.getSelf();
-        Message.sendSMS(s.getSms(), "MAK-ALERT-TESTING - " + s.getName() + " - " + s.getRoom_num() + " - " + pref.getUrgentMsg(), pref);
+        Message.sendSMS(s.getSms(), "CC-ALERT-TESTING - " + s.getName() + " - " + s.getRoom_num() + " - " + pref.getUrgentMsg(), pref);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -1271,28 +1242,28 @@ public class BColor extends javax.swing.JFrame {
                     String name = c.getName();
                     String roomnum = c.getRoom_num();
                     String msg = "Situation has been resolved.";
-                    Message.sendEmail(email, emails, "[MAK-ALERT-OKAY] Situation with " + name + "  " + roomnum +  " has been resolved.", "", pref);
+                    Message.sendEmail(emails, "[CC-ALERT-OKAY] Situation with " + name + "  " + roomnum +  " has been resolved.", "", pref);
                     if (isUrgent) {
                         if(!testmode) {
                             for(com.eci.bcolor.Contact con : pref.getContactList()) {
                                 String sms = con.getSms();
                                 if(sms.length() > 0)
-                                    Message.sendSMS(sms, "MAK-ALERT-OKAY - " + name + " - " + roomnum + " - " + msg, pref);
+                                    Message.sendSMS(sms, "CC-ALERT-OKAY - " + name + " - " + roomnum + " - " + msg, pref);
                             }
                         } else {
-                            Message.sendSMS(c.getSms(), "MAK-ALERT-OKAY - " + name + " - " + roomnum + " - " + msg, pref);
+                            Message.sendSMS(c.getSms(), "CC-ALERT-OKAY - " + name + " - " + roomnum + " - " + msg, pref);
                         }
                     }
                     try {
                         Thread.sleep(300);
-                        jButton12.setBackground(new Color(0,150,51));
+                        jButton12.setBackground(new Color(0,0,204));
                         Thread.sleep(300);
                         jButton12.setBackground(new Color(230,230,230));
                         Thread.sleep(300);
                     } catch (InterruptedException ex) {
                         Logger.getLogger(BColor.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    jButton12.setBackground(new Color(0,150,51));
+                    jButton12.setBackground(new Color(0,0,204));
                 }
             }).start();
         }
@@ -1324,8 +1295,6 @@ public class BColor extends javax.swing.JFrame {
     
     private void updateConnectivity() {
         pref.setEmailHost(jTextField3.getText());
-        pref.setEmailUser(jTextField7.getText());
-        pref.setEmailPassword(new String(jPasswordField1.getPassword()));
         pref.setSmsHost(jTextField9.getText());
         pref.setSmsPort(new Integer(jTextField10.getText()));
         pref.setSmsUser(jTextField11.getText());
@@ -1355,7 +1324,7 @@ public class BColor extends javax.swing.JFrame {
         jFrame1.setVisible(true);
         // Set the window's bounds, centering the window
         int width = 700;
-        int height = 450;
+        int height = 300;
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (screen.width - width) / 2;
         int y = (screen.height - height) / 2;
@@ -1399,7 +1368,7 @@ public class BColor extends javax.swing.JFrame {
         });
     }
 
-    private DefaultListModel dlm;
+    private final DefaultListModel dlm;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -1426,8 +1395,6 @@ public class BColor extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
@@ -1456,7 +1423,6 @@ public class BColor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1476,7 +1442,6 @@ public class BColor extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables

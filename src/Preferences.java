@@ -50,9 +50,6 @@ public class Preferences {
     private String smsUser;
     private String smsPassword;
     private String emailHost;
- // private int emailPort;
-    private String emailUser;
-    private String emailPassword;
     private final String home;
     
     public static void main(String[] args) {
@@ -88,7 +85,7 @@ public class Preferences {
             st.executeUpdate("CREATE TABLE service (id INT PRIMARY KEY, host VARCHAR(255), port INT, uname VARCHAR(30), passwd VARCHAR(64))");
             st.executeUpdate("INSERT INTO service VALUES (1,'" + smsHost + "'," + smsPort + ",'" + smsUser + "','" + smsPassword + "')");
             System.out.println("Export SMS service definitions.");
-            st.executeUpdate("INSERT INTO service VALUES (2,'" + emailHost + "'," + 587 + ",'" + emailUser + "','" + emailPassword + "')");
+            st.executeUpdate("INSERT INTO service VALUES (2,'" + emailHost + "'," + 587 + ",'" + "nobody" + "','" + "secret" + "')");
             System.out.println("Export email service definitions.");
             DriverManager.getConnection("jdbc:derby:;shutdown=true");
         } catch (SQLException ex) {
@@ -137,7 +134,7 @@ public class Preferences {
             st.execute("DELETE FROM service WHERE id >= 0");
             st.executeUpdate("INSERT INTO service VALUES (1,'" + smsHost + "'," + smsPort + ",'" + smsUser + "','" + smsPassword + "')");
             System.out.println("Export SMS service definitions.");
-            st.executeUpdate("INSERT INTO service VALUES (2,'" + emailHost + "'," + 587 + ",'" + emailUser + "','" + emailPassword + "')");
+            st.executeUpdate("INSERT INTO service VALUES (2,'" + emailHost + "'," + 587 + ",'" + "nobody" + "','" + "secret" + "')");
             System.out.println("Export email service definitions.");
             DriverManager.getConnection("jdbc:derby:;shutdown=true");
 
@@ -232,8 +229,6 @@ public class Preferences {
                     System.out.println("Import SMS Definitions.");
                 } else if (id == 2) {
                     emailHost = host;
-                    emailUser = user;
-                    emailPassword = pass;
                     System.out.println("Import Email Definitions.");
                 }                
             }
@@ -346,11 +341,7 @@ public class Preferences {
                     if(edNode.getNodeType() == Node.ELEMENT_NODE) {
                         Element sElement = (Element) edNode;
                         String host = sElement.getElementsByTagName("host").item(0).getTextContent();
-                        String user = sElement.getElementsByTagName("user").item(0).getTextContent();
-                        String pass = sElement.getElementsByTagName("pass").item(0).getTextContent();
                         emailHost = host;
-                        emailUser = user;
-                        emailPassword = pass;
                     }
                 } catch(NullPointerException e) {
                     System.out.println("Invalid email host definition in configuration file.");
@@ -428,31 +419,22 @@ public class Preferences {
             rootElement.appendChild(smsdef);
             Element shost = doc.createElement("host");
             shost.appendChild(doc.createTextNode(smsHost));
-            smsdef.appendChild(name);
+            smsdef.appendChild(shost);
             Element sport = doc.createElement("port");
             sport.appendChild(doc.createTextNode("" + smsPort));
-            smsdef.appendChild(email);
+            smsdef.appendChild(sport);
             Element suser = doc.createElement("user");
             suser.appendChild(doc.createTextNode(smsUser));
-            smsdef.appendChild(sms);
+            smsdef.appendChild(suser);
             Element spass = doc.createElement("pass");
             spass.appendChild(doc.createTextNode(""));
-            smsdef.appendChild(roomnum); 
+            smsdef.appendChild(spass); 
             
             Element emaildef = doc.createElement("emaildef");
             rootElement.appendChild(emaildef);
             Element ehost = doc.createElement("host");
             ehost.appendChild(doc.createTextNode(emailHost));
-            emaildef.appendChild(name);
-            Element eport = doc.createElement("port");
-            eport.appendChild(doc.createTextNode(""));
-            emaildef.appendChild(email);
-            Element euser = doc.createElement("user");
-            euser.appendChild(doc.createTextNode(emailUser));
-            emaildef.appendChild(sms);
-            Element epass = doc.createElement("pass");
-            epass.appendChild(doc.createTextNode(""));
-            emaildef.appendChild(roomnum); 
+            emaildef.appendChild(ehost);
             
             // write the content into xml file
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -558,21 +540,5 @@ public class Preferences {
 
     public void setEmailHost(String emailHost) {
         this.emailHost = emailHost;
-    }
-
-    public String getEmailUser() {
-        return emailUser == null ? "" : emailUser;
-    }
-
-    public void setEmailUser(String emailUser) {
-        this.emailUser = emailUser;
-    }
-
-    public String getEmailPassword() {
-        return emailPassword == null ? "" : emailPassword;
-    }
-
-    public void setEmailPassword(String emailPassword) {
-        this.emailPassword = emailPassword;
     }
 }

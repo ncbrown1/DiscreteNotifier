@@ -6,16 +6,15 @@
 
 package com.eci.bcolor;
 
-import com.sun.mail.smtp.SMTPTransport;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Date;
 import java.util.Properties;
 import javax.mail.MessagingException;
 import javax.mail.Session;
+import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
@@ -25,25 +24,22 @@ import javax.mail.internet.MimeMessage;
  */
 public class Message {
     
-    public static void sendEmail(String from, String to_csv, String subject, String body, com.eci.bcolor.Preferences pref) {
-        try {
-            Properties props = System.getProperties();
-            props.put("mail.smtps.host",pref.getEmailHost());
-            props.put("mail.smtps.auth","false");
-            Session session = Session.getInstance(props, null);
-            javax.mail.Message msg = new MimeMessage(session);
-            msg.setFrom(new InternetAddress(from));
-            msg.setRecipients(javax.mail.Message.RecipientType.TO, InternetAddress.parse(to_csv, false));
-            msg.setSubject(subject);
-            msg.setText(body);
-            msg.setSentDate(new Date());
-            SMTPTransport t = (SMTPTransport)session.getTransport("smtps");
-            t.connect(pref.getEmailHost(), pref.getEmailUser(), pref.getEmailPassword());
-            t.sendMessage(msg, msg.getAllRecipients());
-            System.out.println("Response: " + t.getLastServerResponse());
-            t.close();
-        } catch (MessagingException ex) {
-            System.out.println("Error with Message -> " + ex.getMessage());
+    public static void sendEmail(String to_csv, String subject, String body, com.eci.bcolor.Preferences pref) {
+        String from = "noreply@engineering.ucsb.edu";
+        String host = pref.getEmailHost();
+        Properties properties = System.getProperties();
+        properties.setProperty("mail.smtp.host", host);
+        Session session = Session.getDefaultInstance(properties);
+        try{
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.setRecipients(javax.mail.Message.RecipientType.TO, InternetAddress.parse(to_csv, false));
+            message.setSubject(subject);
+            message.setText(body);
+            Transport.send(message);
+            System.out.println("Email sent successfully");
+        } catch (MessagingException mex) {
+            System.out.println("Error with Message -> " + mex.getMessage());
         }
     }
     
