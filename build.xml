@@ -1,0 +1,39 @@
+<project>
+  
+  <path id="project.class.path"> 
+    <pathelement location="build"/>
+    <pathelement location="lib/derby.jar"/>
+    <pathelement location="lib/javax-mail-1.4.7.jar"/>
+  </path>
+
+  <target name="compile" description="compile the code">
+    <mkdir dir="build" />
+    <javac srcdir="src"
+     destdir="build"
+     includeantruntime="false"
+     debug="true" >
+      <classpath refid="project.class.path" />
+    </javac>
+  </target>
+
+  <target name="clean" description="clean up the project">
+    <delete dir="build" />
+  </target>
+
+  
+  <target name="run" description="run the main">
+    <java classname="com.eci.bcolor.BColor" fork="true">
+      <classpath refid="project.class.path" />
+    </java>
+  </target>
+
+  <target name="jar" depends="compile" description="create a jar file">
+    <jar destfile="build/bcolor.jar">
+      <fileset dir="build" includes="*.class"/>
+      <manifest>
+        <attribute name="Main-Class" value="com.eci.bcolor.BColor"/>
+      </manifest>
+    </jar>
+  </target>
+  
+</project>
